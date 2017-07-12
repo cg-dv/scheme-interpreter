@@ -4,6 +4,9 @@
 # Unignore files with extensions
 !*.*
 
+# Ignore directories
+!*/ 
+
 # Ignore files with extensions ".o" or ".hi"
 *.o
 *.hi
