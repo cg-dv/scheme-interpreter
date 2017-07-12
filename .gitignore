@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# Unignore files with extensions
+!*.*
+
+# Ignore files with extensions ".o" or ".hi"
+*.o
+*.hi
