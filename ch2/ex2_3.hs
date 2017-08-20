@@ -21,12 +21,22 @@ parseAtom = do
 parseString :: Parser LispVal
 parseString = do
                 char '"'
-                x <- many (noneOf "\"")
+                x <- many $ escapedChars <|> noneOf "\"\\" 
                 char '"'
                 return $ String x
 
 parseNumber :: Parser LispVal
-parseNumber = many1 digit >>= (\digits -> return $ (Number . read) digits)
+parseNumber = liftM (Number . read) $ many1 digit
+
+escapedChars :: Parser Char
+escapedChars = do char '\\'
+                  x <- oneOf "\\\"nrt"
+                  return $ case x of
+                    '\\' -> x
+                    '"' -> x
+                    'n' -> '\n' 
+                    'r' -> '\r' 
+                    't' -> '\t' 
 
 parseExpr :: Parser LispVal
 parseExpr = parseAtom
