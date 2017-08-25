@@ -153,6 +153,7 @@ parseExpr = parseAtom
         <|> try parseFloat
         <|> try parseRational
         <|> try parseNumber
+        <|> try parseQuoted
         <|> try parseBool
         <|> try parseCharacter
         <|> try (do string "#("
