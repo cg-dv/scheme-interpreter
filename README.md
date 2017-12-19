@@ -5,11 +5,11 @@ This repository contains code written while working through the wikibook
 
 ## Usage
 
-Compile with:
+Compiling and Running:
 
-ghc -package parsec -fglasgow-exts -o scheme path/to/haskellFile.hs
+cd write-yourself-a-scheme/ch10
 
-Run:
+ghc -package parsec -fglasgow-exts -o scheme listing10_1.hs
 
 ./scheme
 
