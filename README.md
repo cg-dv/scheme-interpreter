@@ -7,7 +7,7 @@ This repository contains code written while working through the wikibook
 
 Note: This interpreter is still partially broken.  The lambda expression
 and function definition functionalities are broken.  I need to fix
-the mistakes I made follwing the second half of the book. 
+the mistakes I made following the second half of the book. 
 
 ## Usage
 
